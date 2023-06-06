@@ -68,3 +68,47 @@
 //   console.log(guestCount);
 //   document.querySelector("#guest-count").textContent = guestCount.length;
 // }
+
+// ------------------------------------------------ Exercise 04 ----------------------------------
+
+// "use strict";
+
+// window.addEventListener("load", initApp);
+
+// let users = [];
+
+// async function initApp() {
+//   users = await getUsers();
+
+//   createUser("john", true, "guest");
+// }
+
+// async function getUsers() {
+//   const response = await fetch("users.json");
+//   const data = response.json();
+//   console.log(data);
+//   return data;
+// }
+
+// function displayActiveUsers(users) {
+//   for (const user of users)
+//     if (user.active === true) {
+//       const html = /*html*/ `
+//     <li>${user.name} ${user.role}</li>`;
+//       document.querySelector("#userlist").insertAdjacentHTML("beforeend", html);
+//     }
+// }
+
+// function createUser(name, active, role) {
+//   //   preventDeafaul();
+//   const newUser = {
+//     name: name,
+//     active: active,
+//     role: role,
+//   };
+//   users.push(newUser);
+  
+//   displayActiveUsers(users);
+// }
+
+
