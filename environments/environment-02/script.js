@@ -64,53 +64,53 @@
 
 // ----------------------------------- Exercise 05 -----------------------------------
 
-"use strict";
+// "use strict";
 
-window.addEventListener("load", initApp);
+// window.addEventListener("load", initApp);
 
-let animals = [
-  { name: "George", type: "Lion", age: 5 },
-  { name: "Michael", type: "Cougar", age: 8 },
-  { name: "Henry", type: "Bear", age: 2 },
-];
+// let animals = [
+//   { name: "George", type: "Lion", age: 5 },
+//   { name: "Michael", type: "Cougar", age: 8 },
+//   { name: "Henry", type: "Bear", age: 2 },
+// ];
 
-function initApp() {
-  showAnimal(animals);
-  document.querySelector("#create-form").addEventListener("submit", createFormSubmitted);
-}
+// function initApp() {
+//   showAnimal(animals);
+//   document.querySelector("#create-form").addEventListener("submit", createFormSubmitted);
+// }
 
-function showAnimal(animals) {
-  animals.sort((a, b) => a.age - b.age);
-  document.querySelector("#list-container tbody").innerHTML = "";
-  for (const animal of animals) {
-    const html = /*html*/ `
-      <tr>
-        <td>${animal.name}</td>
-        <td>${animal.type}</td>
-        <td>${animal.age}</td>
-      </tr>
-    `;
-    document.querySelector("#list-container tbody").insertAdjacentHTML("beforeend", html);
-  }
-}
+// function showAnimal(animals) {
+//   animals.sort((a, b) => a.age - b.age);
+//   document.querySelector("#list-container tbody").innerHTML = "";
+//   for (const animal of animals) {
+//     const html = /*html*/ `
+//       <tr>
+//         <td>${animal.name}</td>
+//         <td>${animal.type}</td>
+//         <td>${animal.age}</td>
+//       </tr>
+//     `;
+//     document.querySelector("#list-container tbody").insertAdjacentHTML("beforeend", html);
+//   }
+// }
 
-function createAnimal(name, type, age) {
-  const animal = {
-    name: name,
-    type: type,
-    age: age,
-  };
-  animals.push(animal);
-  return animal;
-}
-function createFormSubmitted(event) {
-  event.preventDefault(); // forhindrer standard submit-hændelse
+// function createAnimal(name, type, age) {
+//   const animal = {
+//     name: name,
+//     type: type,
+//     age: age,
+//   };
+//   animals.push(animal);
+//   return animal;
+// }
+// function createFormSubmitted(event) {
+//   event.preventDefault(); // forhindrer standard submit-hændelse
 
-  const form = event.target; // reference til formularen
-  const name = form.name.value;
-  const type = form.type.value;
-  const age = form.age.value;
+//   const form = event.target; // reference til formularen
+//   const name = form.name.value;
+//   const type = form.type.value;
+//   const age = form.age.value;
 
-  createAnimal(name, type, age);
-  showAnimal(animals);
-}
+//   createAnimal(name, type, age);
+//   showAnimal(animals);
+// }
