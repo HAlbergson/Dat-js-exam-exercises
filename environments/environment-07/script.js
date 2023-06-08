@@ -2,34 +2,42 @@
 
 window.addEventListener("load", initApp);
 
-const songs = {
-  artist: "Taylor Swift",
-  title: "Blank space",
-  duration: "4:33",
-  artist: "Beastie Boys",
-  title: "Sabotage",
-  duration: "3:02",
-  artist: "Skrillex",
-  title: "Bangarang",
-  duration: "3:35",
-  artist: "Wolfgang Amadeus Mozart",
-  title: "Eine kleine Nachtmusik",
-  duration: "5:45",
-  artist: "Coldplay",
-  title: "Yellow",
-  duration: "4:27",
-  artist: "Metallica",
-  title: "Enter Sandman",
-  duration: "5:32",
-};
+const students = [];
 
 function initApp() {
-  console.log(songs);
-  listOfSongs();
+  console.log("is running");
+  document.querySelector("#create-student-form").addEventListener("submit", submitNewStudent);
+  console.log(students);
 }
 
-function listOfSongs(songs) {
-  for (const song of songs) {
-    console.log(songs);
-  }
+function submitNewStudent(event) {
+  event.preventDefault();
+
+  const form = event.target;
+
+  const name = form.name.value;
+  const email = form.email.value;
+  const age = Number(form.age.value);
+  createStudent(name, email, age);
+  console.log(students);
+  showStudents(students);
+}
+
+function createStudent(name, email, age) {
+  const student = { name, email, age };
+  students.push(student);
+}
+
+function showStudents(students) {
+  document.querySelector("#students-table-body").innerHTML = "";
+  students.sort((a, b) => a.name.localeCompare(b.name));
+  for (const student of students)
+    if (student.age > 18 - 1) {
+      const html = /*html*/ `
+
+            <td>${student.name}</td>
+            <td>${student.email}</td>
+            <td>${student.age}</td>`;
+      document.querySelector("#students-table-body").insertAdjacentHTML("beforeend", html);
+    }
 }

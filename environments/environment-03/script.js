@@ -20,7 +20,7 @@
 //   for (const product of products)
 //     if (product.inStock === true) {
 //       console.log(product);
-//       const html = /*html*/ `
+//       const html = /*html*/ 
 //         <li> ${product.name} ${product.price} ${product.inStock} </li>`;
 //       document.querySelector("#list-container").insertAdjacentHTML("beforeend", html);
 //     }
