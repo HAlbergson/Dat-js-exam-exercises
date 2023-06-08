@@ -45,3 +45,53 @@
 // function sortByEctsPoints() {
 //   courses.sort((a, b) => a.ectsPoints - b.ectsPoints);
 // }
+
+// ---------------------------------------- exercise 13 -----------------------------------------------
+
+import { courses } from "./courses.js";
+
+window.addEventListener("load", initApp);
+
+function initApp() {
+  showCourses(courses);
+  document.querySelector("#select-filter-ects").addEventListener("change", filter);
+}
+
+function showCourses(courses) {
+    document.querySelector("#courses-list").innerHTML=""
+  for (const course of courses) {
+    const html = /*html*/ `
+    <li>${course.name} ${course.ectsPoints}</li>`;
+    document.querySelector("#courses-list").insertAdjacentHTML("beforeend", html);
+  }
+}
+function filter(event) {
+  const selectedEcts = event.target.value;
+  const filteredCourses = courses.filter((course) => course.ectsPoints.toString() === selectedEcts);
+  showCourses(filteredCourses);
+}
+
+// --------------------------------------------------------- Exercise 14 --------------------------------------
+
+// import { courses } from "./courses.js";
+
+// window.addEventListener("load", initApp);
+
+// function initApp() {
+//   // showCourses(courses);
+//   sortByStartDate(courses);
+// }
+
+// function showCourses(courses) {
+//   for (const course of courses) {
+//     const html = /*html*/ `
+//     <li>${course.name} ${course.ectsPoints} ${course.startDate}</li>`;
+//     document.querySelector("#courses-list").insertAdjacentHTML("beforeend", html);
+//   }
+// }
+
+// function sortByStartDate() {
+//   courses.sort((a, b) => a.startDate.localeCompare(b.startDate));
+//   showCourses(courses);
+// }
+
