@@ -44,7 +44,7 @@
 //     }
 // }
 
-// ---------------------------------------------- Exercise 20 --------------------------------------------
+// ---------------------------------------------- Exercise 19 --------------------------------------------
 
 // "use strict";
 
@@ -138,4 +138,137 @@
 //           </tr>`;
 //     document.querySelector("#students-table-body").insertAdjacentHTML("beforeend", html);
 //   }
+// }
+
+// --------------------------------------------------- Exercise 19 ----------------------------------------------
+
+// "use strict";
+
+// window.addEventListener("load", initApp);
+
+// const students = [];
+
+// function initApp() {
+//   console.log("Hallo World!");
+
+//   document.querySelector("#create-student-form").addEventListener("submit", submitForm);
+// }
+
+// function submitForm(event) {
+//   event.preventDefault();
+
+//   const form = event.target;
+//   const name = form.name.value;
+//   const email = form.email.value;
+//   const age = Number(form.age.value);
+
+//   if (validEmail(email)) {
+//     addNewStudentToStudent(name, email, age);
+//   } else {
+//     console.log("jinvalid Mail");
+//     removeInvalidMail();
+//   }
+//   console.log(students);
+// }
+
+// function addNewStudentToStudent(name, email, age) {
+//   const newStudent = { name, email, age };
+//   students.push(newStudent);
+// }
+
+// function validEmail(email) {
+//   if (email.length >= 4 && email.endsWith("@stud.kea.dk")) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// -------------------------------------------------------- Exercise 20 ---------------------------------------
+
+// "use strict";
+
+// window.addEventListener("load", initApp);
+
+// const students = [];
+
+// function initApp() {
+//   console.log("hallo WORLD");
+//   document.querySelector("#create-student-form").addEventListener("submit", submitForm);
+// }
+
+// function submitForm(event) {
+//   event.preventDefault();
+//   const form = event.target;
+//   const name = form.name.value;
+//   const email = form.email.value;
+//   const age = Number(form.age.value);
+//   createStudent(name, email, age);
+//   console.log(students);
+//   showStudents();
+// }
+
+// function createStudent(name, email, age) {
+//   const newStudent = { name, email, age };
+//   students.push(newStudent);
+// }
+
+// function showStudents() {
+//   document.querySelector("#students-table-body").innerHTML = "";
+//   students.sort((a, b) => a.age - b.age);
+//   for (const student of students) {
+//     const html = /*html*/ `
+//           <tr>
+//             <td>${student.name}</td>
+//             <td>${student.email}</td>
+//             <td>${student.age}</td>
+//           </tr>
+//           `;
+//     document.querySelector("#students-table-body").insertAdjacentHTML("beforeend", html);
+//   }
+// }
+
+// --------------------------------------------- Exercise 21 -----------------------------------
+
+// "use strict";
+
+// window.addEventListener("load", initApp);
+
+// const students = [];
+
+// function initApp() {
+//   console.log("hallo world");
+//   document.querySelector("#create-student-form").addEventListener("submit", submitForm);
+// }
+
+// function submitForm(event) {
+//   event.preventDefault();
+
+//   const form = event.target;
+//   const name = form.name.value;
+//   const email = form.email.value;
+//   const age = Number(form.age.value);
+//   createStudent(name, email, age);
+//   console.log(students);
+//   showStudents();
+// }
+
+// function createStudent(name, email, age) {
+//   const newStudent = { name, email, age };
+//   students.push(newStudent);
+// }
+
+// function showStudents() {
+//   document.querySelector("#students-table-body").innerHTML = "";
+//   students.sort((a, b) => a.name.localeCompare(b.name));
+//   for (const student of students)
+//     if (student.age >= 18) {
+//       const html = /*html*/ `
+//           <tr>
+//             <td>${student.name}</td>
+//             <td>${student.email}</td>
+//             <td>${student.age}</td>
+//           </tr>`;
+//       document.querySelector("#students-table-body").insertAdjacentHTML("beforeend", html);
+//     }
 // }

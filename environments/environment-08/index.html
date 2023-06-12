@@ -22,21 +22,20 @@
         <input type="text" id="title" name="title" placeholder="Song title" />
 
         <label for="duration">Duration</label>
-        <input type="text" id="duration" name="duration" placeholder="song length, (eg. 3:21)" pattern="[0-9]{1,2}:[0-9]{2}"/>
+        <input type="text" id="duration" name="duration" placeholder="song length, (eg. 3:21)" pattern="[0-9]{1,2}:[0-9]{2}" />
 
         <button>Add song</button>
       </form>
 
       <h2>List of songs</h2>
       <form id="sort-songs-form">
-        Sort by: 
-        <label><input type="radio" name="sortby" value="artist" id="sort-artist" checked> Artist</label>
-        <label><input type="radio" name="sortby" value="title" id="sort-title"> Title</label>
+        Sort by:
+        <label><input type="radio" name="sortby" value="artist" id="sort-artist" checked /> Artist</label>
+        <label><input type="radio" name="sortby" value="title" id="sort-title" /> Title</label>
       </form>
       <ul id="songlist">
         <!-- <li>ARTIST: TITLE (DURATION)</li> -->
       </ul>
-      
     </main>
     <script src="script.js"></script>
   </body>
