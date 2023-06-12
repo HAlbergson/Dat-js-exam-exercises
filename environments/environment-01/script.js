@@ -107,8 +107,40 @@
 //     role: role,
 //   };
 //   users.push(newUser);
-  
+
 //   displayActiveUsers(users);
 // }
 
+"use strict";
 
+window.addEventListener("load", initApp);
+
+let users = [];
+
+async function initApp() {
+  console.log("hallo World");
+  users = await getUsers();
+  console.log(users);
+  showUsers();
+}
+
+async function getUsers() {
+  const response = await fetch("users.json");
+  const data = response.json();
+  return data;
+}
+
+function showUsers() {
+  const admins = filterAdmin();
+
+  for (const user of admins) {
+    const html = /*html*/ `
+        <li>${user.name} ${user.active} ${user.role}</li>`;
+    document.querySelector("#userlist").insertAdjacentHTML("beforeend", html);
+  }
+}
+
+function filterAdmin() {
+  const admins = users.filter((user) => user.role === "admin");
+  return admins;
+}
