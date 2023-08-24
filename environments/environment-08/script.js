@@ -254,52 +254,53 @@
 // }
 
 // ------------------------------------- exercise 22 ------------------------------------
-// "use strict";
+"use strict";
 
-// window.addEventListener("load", initApp);
+window.addEventListener("load", initApp);
 
-// let songs = [];
+let songs = [];
 
-// async function initApp() {
-//   console.log("Hallo World");
-//   songs = await getSongs();
+async function initApp() {
+  console.log("Hallo World");
+  songs = await getSongs();
 
-//   console.log(songs);
+  console.log(songs);
 
-//   showSongs();
-// }
+  showSongs();
+}
 
-// async function getSongs() {
-//   const response = await fetch("playlist.json");
-//   const data = await response.json();
-//   return data;
-// }
+async function getSongs() {
+  const response = await fetch("playlist.json");
+  const data = await response.json();
+  return data;
+}
 
-// function showSongs() {
-//   document.querySelector("#songlist").innerHTML = "";
-//   for (const song of songs) {
-//     const html = /*html*/ `
-//     <li>${song.artist} ${song.title} ${song.duration} <button>upvote</button></li>`;
-//     document.querySelector("#songlist").insertAdjacentHTML("beforeend", html);
-//     document.querySelector("#songlist li:last-child button").addEventListener("click", upVote);
-//     const songID = songs.indexOf(song);
-//     function upVote() {
-//       if (songID !== 0) {
-//         songs.splice(songID, 1);
-//         songs.splice(songID - 1, 0, song);
-//         showSongs();
-//       }
-//     }
-//   }
-// }
+function showSongs() {
+  document.querySelector("#songlist").innerHTML = "";
+  for (const song of songs) {
+    const html = /*html*/ `
+    <li>${song.artist} ${song.title} ${song.duration} <button>remove</button></li>`;
+    document.querySelector("#songlist").insertAdjacentHTML("beforeend", html);
+    document.querySelector("#songlist li:last-child button").addEventListener("click", () => removeSong(song));
+    // const songID = songs.indexOf(song);
+    // function upVote() {
+    //   if (songID !== 0) {
+    //     songs.splice(songID, 1);
+    //     songs.splice(songID - 1, 0, song);
+    //     showSongs();
+    //   }
+    // }
+  }
+}
 
-// function removeSong(songToRemove) {
-//   const i = songs.findIndex((song) => song.title === songToRemove.title);
-//   if (i !== -1) {
-//     songs.splice(i, 1);
-//     showSongs();
-//   }
-// }
+function removeSong(songToRemove) {
+  const i = songs.findIndex((song) => song.title === songToRemove.title);
+  if (i !== -1) {
+    songs.splice(i, 1);
+    showSongs();
+    console.log(songs);
+  }
+}
 
 // -------------------------------------- exercise 24 ---------------------------------------
 
@@ -364,31 +365,31 @@
 
 // let songs = [];
 
-const songs = [
-  { artist: "din mor", title: "er sød", duration: "4:20" },
-  { artist: "din far", title: "er sur", duration: "5:20" },
-  { artist: "din søster", title: "er sød", duration: "3:20" },
-  { artist: "din bror", title: "er smuk", duration: "2:20" },
-];
+// const songs = [
+//   { artist: "din mor", title: "er sød", duration: "4:20" },
+//   { artist: "din far", title: "er sur", duration: "5:20" },
+//   { artist: "din søster", title: "er sød", duration: "3:20" },
+//   { artist: "din bror", title: "er smuk", duration: "2:20" },
+// ];
 
-function initApp() {
-  console.log("Hallo world!!");
-  showSongs(songs);
-}
+// function initApp() {
+//   console.log("Hallo world!!");
+//   showSongs(songs);
+// }
 
-function showSongs(songs) {
-  document.querySelector("#songlist").innerHTML = "";
-  for (const song of songs) {
-    const html = /*html*/ `
-  <li>${song.artist} ${song.title} ${song.duration}<button>upvote</button></li>
-  `;
-    document.querySelector("#songlist").insertAdjacentHTML("beforeend", html);
-  }
-}
+// function showSongs(songs) {
+//   document.querySelector("#songlist").innerHTML = "";
+//   for (const song of songs) {
+//     const html = /*html*/ `
+//   <li>${song.artist} ${song.title} ${song.duration}<button>upvote</button></li>
+//   `;
+//     document.querySelector("#songlist").insertAdjacentHTML("beforeend", html);
+//   }
+// }
 
-function upVoteButton(song) {
-  console.log(song);
-  song.vote++;
-  showSongs(songs);
-  console.log(songs);
-}
+// function upVoteButton(song) {
+//   console.log(song);
+//   song.vote++;
+//   showSongs(songs);
+//   console.log(songs);
+// }
